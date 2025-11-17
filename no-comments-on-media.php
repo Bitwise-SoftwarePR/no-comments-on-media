@@ -272,6 +272,7 @@ class No_Comments_On_Media {
         global $wpdb;
         
         // Close comments and pingbacks/trackbacks on all attachments
+        // phpcs:ignore WordPress.DB.DirectDatabaseQuery.DirectQuery, WordPress.DB.DirectDatabaseQuery.NoCaching -- Bulk operation on activation, no caching needed
         $wpdb->query(
             $wpdb->prepare(
                 "UPDATE {$wpdb->posts} 
@@ -295,6 +296,7 @@ class No_Comments_On_Media {
         global $wpdb;
         
         // Get count of comments to delete
+        // phpcs:ignore WordPress.DB.DirectDatabaseQuery.DirectQuery, WordPress.DB.DirectDatabaseQuery.NoCaching -- Count query for user-initiated bulk operation
         $count = $wpdb->get_var(
             $wpdb->prepare(
                 "SELECT COUNT(*) FROM {$wpdb->comments} 
@@ -307,6 +309,7 @@ class No_Comments_On_Media {
         );
         
         // Delete comments on attachments
+        // phpcs:ignore WordPress.DB.DirectDatabaseQuery.DirectQuery, WordPress.DB.DirectDatabaseQuery.NoCaching -- Bulk delete operation, caching not applicable
         $wpdb->query(
             $wpdb->prepare(
                 "DELETE FROM {$wpdb->comments} 
@@ -319,6 +322,7 @@ class No_Comments_On_Media {
         );
         
         // Clean up orphaned comment meta
+        // phpcs:ignore WordPress.DB.DirectDatabaseQuery.DirectQuery, WordPress.DB.DirectDatabaseQuery.NoCaching -- Cleanup of orphaned meta, no caching needed
         $wpdb->query(
             "DELETE cm FROM {$wpdb->commentmeta} cm
              LEFT JOIN {$wpdb->comments} c ON cm.comment_id = c.comment_ID
@@ -326,6 +330,7 @@ class No_Comments_On_Media {
         );
         
         // Update comment count for attachments
+        // phpcs:ignore WordPress.DB.DirectDatabaseQuery.DirectQuery, WordPress.DB.DirectDatabaseQuery.NoCaching -- Bulk update operation
         $wpdb->query(
             $wpdb->prepare(
                 "UPDATE {$wpdb->posts} 
@@ -348,6 +353,7 @@ add_action( 'plugins_loaded', array( 'No_Comments_On_Media', 'init' ) );
  */
 if ( defined( 'WP_CLI' ) && WP_CLI ) {
     
+    // phpcs:disable WordPress.NamingConventions.PrefixAllGlobals.NonPrefixedClassFound -- WP-CLI command class follows WP-CLI naming conventions
     class No_Comments_On_Media_CLI {
         
         /**
@@ -368,6 +374,7 @@ if ( defined( 'WP_CLI' ) && WP_CLI ) {
             update_option( No_Comments_On_Media::OPTION_NAME, true );
             
             // Close comments on all attachments
+            // phpcs:ignore WordPress.DB.DirectDatabaseQuery.DirectQuery, WordPress.DB.DirectDatabaseQuery.NoCaching -- WP-CLI bulk operation
             $result = $wpdb->query(
                 $wpdb->prepare(
                     "UPDATE {$wpdb->posts} 
@@ -423,6 +430,7 @@ if ( defined( 'WP_CLI' ) && WP_CLI ) {
             global $wpdb;
             
             // Get count first
+            // phpcs:ignore WordPress.DB.DirectDatabaseQuery.DirectQuery, WordPress.DB.DirectDatabaseQuery.NoCaching -- WP-CLI count query
             $count = $wpdb->get_var(
                 $wpdb->prepare(
                     "SELECT COUNT(*) FROM {$wpdb->comments} 
@@ -478,6 +486,7 @@ if ( defined( 'WP_CLI' ) && WP_CLI ) {
             $enabled = get_option( No_Comments_On_Media::OPTION_NAME, true );
             
             // Count attachments with open comments
+            // phpcs:ignore WordPress.DB.DirectDatabaseQuery.DirectQuery, WordPress.DB.DirectDatabaseQuery.NoCaching -- WP-CLI status query
             $open_count = $wpdb->get_var(
                 $wpdb->prepare(
                     "SELECT COUNT(*) FROM {$wpdb->posts} 
@@ -489,6 +498,7 @@ if ( defined( 'WP_CLI' ) && WP_CLI ) {
             );
             
             // Count comments on attachments
+            // phpcs:ignore WordPress.DB.DirectDatabaseQuery.DirectQuery, WordPress.DB.DirectDatabaseQuery.NoCaching -- WP-CLI status query
             $comment_count = $wpdb->get_var(
                 $wpdb->prepare(
                     "SELECT COUNT(*) FROM {$wpdb->comments} 
@@ -514,4 +524,5 @@ if ( defined( 'WP_CLI' ) && WP_CLI ) {
             }
         }
     }
+    // phpcs:enable WordPress.NamingConventions.PrefixAllGlobals.NonPrefixedClassFound
 }
