@@ -266,7 +266,7 @@ cp -r NoCommentsOnMedia /path/to/wordpress/wp-content/plugins/
 
 ---
 
-**Made with ❤️ for the WordPress community**
+**Made with ❤️ for the WordPress community by Bitwise Software**
 
 [![WordPress Plugin Version](https://img.shields.io/badge/version-1.0.0-blue.svg)](https://github.com/Bitwise-SoftwarePR/NoCommentsOnMedia)
 [![WordPress Compatibility](https://img.shields.io/badge/wordpress-5.0%2B-brightgreen.svg)](https://wordpress.org/)
@@ -379,7 +379,7 @@ Success: Comments are disabled on media attachments.
 
 ---
 
-## � Tehnički detalji
+## Tehnički detalji
 
 ### WordPress Hooks
 
@@ -530,5 +530,5 @@ cp -r NoCommentsOnMedia /path/to/wordpress/wp-content/plugins/
 
 ---
 
-**Napravljen sa ❤️ za WordPress zajednicu**
+**Napravljen sa ❤️ za WordPress zajednicu od Bitwise Software**
 
