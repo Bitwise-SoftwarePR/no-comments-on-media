@@ -266,6 +266,10 @@ cp -r NoCommentsOnMedia /path/to/wordpress/wp-content/plugins/
 
 **Made with ❤️ for the WordPress community by Bitwise Software**
 
+---
+
+# No Comments on Media (Serbian)
+
 [![WordPress Plugin Version](https://img.shields.io/badge/version-1.0.0-blue.svg)](https://github.com/Bitwise-SoftwarePR/NoCommentsOnMedia)
 [![WordPress Compatibility](https://img.shields.io/badge/wordpress-5.0%2B-brightgreen.svg)](https://wordpress.org/)
 [![PHP Version](https://img.shields.io/badge/php-7.0%2B-purple.svg)](https://php.net/)
