@@ -5,7 +5,7 @@
  * Description: Disables comments on all media attachments. Simple, lightweight, effective.
  * Version: 1.0.0
  * Author: Bitwise Software
- * Author URI: https://github.com/Bitwise-SoftwarePR
+ * Author URI: https://bitwisesoftware.rs
  * License: GPL v2 or later
  * License URI: https://www.gnu.org/licenses/gpl-2.0.html
  * Text Domain: no-comments-on-media
