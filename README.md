@@ -379,7 +379,7 @@ Success: Comments are disabled on media attachments.
 
 ---
 
-## Tehnički detalji
+## 🔧 Tehnički detalji
 
 ### WordPress Hooks
 
