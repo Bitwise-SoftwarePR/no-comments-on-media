@@ -1,7 +1,5 @@
 # No Comments on Media
 
-# No Comments on Media
-
 **Minimal WordPress plugin that automatically disables comments on media attachments.**
 
 [![WordPress Plugin Version](https://img.shields.io/badge/version-1.0.0-blue.svg)](https://github.com/Bitwise-SoftwarePR/NoCommentsOnMedia)
